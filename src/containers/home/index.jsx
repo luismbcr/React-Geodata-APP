@@ -22,7 +22,8 @@ class MainMenu extends React.Component {
                 {
                   this.props.countries.map((country) => {
                     return (<Grid.Column key={ country.countryCode } >
-                      <Country flag={ `https://www.countryflags.io/${country.countryCode}/flat/64.png` } name={ country.countryName }
+                      <Country flag={ `https://www.countryflags.io/${country.countryCode}/flat/64.png` }
+                        name={ country.countryName } id={ country.countryCode }
                         continent={ country.continentName } capital={ country.capital }
                       />
                     </Grid.Column>);

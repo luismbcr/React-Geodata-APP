@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Card, Image } from 'semantic-ui-react';
 
 export default (props) => (
-  <Card.Group className="country" >
+  <Card.Group as={ Link } to={ `country/${props.id}` } className="country" >
     <Card>
       <Card.Content>
         <Image floated='right' size='mini' src={ props.flag } />
