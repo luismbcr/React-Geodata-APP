@@ -3,6 +3,7 @@ import { Route, Link } from 'react-router-dom';
 import { Container, Menu, Header } from 'semantic-ui-react';
 import Home from './containers/home';
 import About from './containers/about';
+import Country from './containers/country';
 
 const App = () => (
   <div>
@@ -19,6 +20,7 @@ const App = () => (
       <main>
         <Route exact path="/" component={ Home } />
         <Route exact path="/about" component={ About } />
+        <Route exact path="/country/:cc" component={ Country } />
       </main>
     </Container>
   </div>

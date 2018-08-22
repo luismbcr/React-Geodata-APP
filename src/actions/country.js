@@ -6,7 +6,7 @@ export const getContries = () => {
       type: ACTIONS.COUNTRY.GET_COUNTRIES_REQUESTED,
     });
 
-    fetch('http://api.geonames.org/countryInfoJSON?formatted=true&username=luismb&style=full')
+    return fetch('http://api.geonames.org/countryInfoJSON?formatted=true&username=luismb&style=full')
       .then(
         response => response.json(),
         error => console.log(error)
