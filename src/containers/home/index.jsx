@@ -1,18 +1,23 @@
 import React from 'react';
-import { Header, Divider, Grid } from 'semantic-ui-react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { Header, Divider, Grid, Loader } from 'semantic-ui-react';
 import Country from '../../components/country';
-export default class MainMenu extends React.Component {
+import { getContries } from '../../actions/country';
+
+class MainMenu extends React.Component {
   // constructor (props) {
   //   super(props);
   // };
   componentDidMount () {
-    console.log('load');
+    this.props.getContries();
   }
   render () {
     return (
       <div>
         <Header as='h1'>Countries</Header>
         <Divider />
+        {this.props.isLoading ? <Loader active inline='centered' /> : ' ' }
         <Grid columns={ 4 }>
           <Grid.Row>
             <Grid.Column>
@@ -27,3 +32,17 @@ export default class MainMenu extends React.Component {
     );
   }
 }
+
+const mapStateToProps = state => ({
+  countries: state.country.countries,
+  isLoading: state.country.isLoading,
+});
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+  getContries,
+}, dispatch);
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(MainMenu);
