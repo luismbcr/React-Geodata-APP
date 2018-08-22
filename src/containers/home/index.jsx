@@ -1,49 +1,53 @@
 import React from 'react';
-import { push } from 'react-router-redux';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { Button } from 'semantic-ui-react';
-import {
-  increment,
-  incrementAsync,
-  decrement,
-  decrementAsync,
-} from '../../actions/counter';
+import { Header, Divider, Grid, Loader } from 'semantic-ui-react';
+import Country from '../../components/country';
+import { getContries } from '../../actions/country';
 
-const Home = props => (
-  <div>
-    <h1>Home</h1>
-    <p>Count: {props.count}</p>
+class MainMenu extends React.Component {
+  componentDidMount () {
+    !this.props.countries.length && this.props.getContries();
+  }
+  render () {
+    return (
+      <div>
+        <Header as='h2'>Countries</Header>
+        <Divider />
+        {
+          this.props.isLoading
+            ? <Loader active inline='centered' />
+            : <Grid columns={ 4 }>
+              <Grid.Row>
+                {
+                  this.props.countries.map((country) => {
+                    return (<Grid.Column key={ country.countryCode } >
+                      <Country flag={ `https://www.countryflags.io/${country.countryCode}/flat/64.png` } name={ country.countryName }
+                        continent={ country.continentName } capital={ country.capital }
+                      />
+                    </Grid.Column>);
+                  })
 
-    <p>
-      <Button onClick={ props.increment } disabled={ props.isIncrementing }>Increment</Button>{' '}
-      <Button onClick={ props.incrementAsync } disabled={ props.isIncrementing }>Increment Async</Button>
-    </p>
+                }
+              </Grid.Row>
+            </Grid>
+        }
 
-    <p>
-      <Button onClick={ props.decrement } disabled={ props.isDecrementing }>Decrementing</Button>{' '}
-      <Button onClick={ props.decrementAsync } disabled={ props.isDecrementing }>Decrement Async</Button>
-    </p>
-
-    <p><Button onClick={ () => props.changePage() }>Go to about page via redux</Button></p>
-  </div>
-);
+      </div>
+    );
+  }
+}
 
 const mapStateToProps = state => ({
-  count: state.counter.count,
-  isIncrementing: state.counter.isIncrementing,
-  isDecrementing: state.counter.isDecrementing,
+  countries: state.country.countries,
+  isLoading: state.country.isLoading,
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  increment,
-  incrementAsync,
-  decrement,
-  decrementAsync,
-  changePage: () => push('/about-us'),
+  getContries,
 }, dispatch);
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Home);
+)(MainMenu);

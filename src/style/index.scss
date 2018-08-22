@@ -1,7 +1,12 @@
-body {
-  background-color: #FFFAAA;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
+body{
+  margin-top: 1em;
+}
+
+
+
+.main-menu.menu:last-child{
+  margin-bottom: 1em;
+}
+.ui.cards.country{
+  margin-bottom: 0.5em;
 }
