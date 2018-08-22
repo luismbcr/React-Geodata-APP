@@ -6,28 +6,33 @@ import Country from '../../components/country';
 import { getContries } from '../../actions/country';
 
 class MainMenu extends React.Component {
-  // constructor (props) {
-  //   super(props);
-  // };
   componentDidMount () {
-    this.props.getContries();
+    !this.props.countries.length && this.props.getContries();
   }
   render () {
     return (
       <div>
-        <Header as='h1'>Countries</Header>
+        <Header as='h2'>Countries</Header>
         <Divider />
-        {this.props.isLoading ? <Loader active inline='centered' /> : ' ' }
-        <Grid columns={ 4 }>
-          <Grid.Row>
-            <Grid.Column>
-              <Country flag="https://www.countryflags.io/cr/flat/64.png" name="Costa Rica"
-                continent="North America" capital="San José"
-              />
-            </Grid.Column>
+        {
+          this.props.isLoading
+            ? <Loader active inline='centered' />
+            : <Grid columns={ 4 }>
+              <Grid.Row>
+                {
+                  this.props.countries.map((country) => {
+                    return (<Grid.Column key={ country.countryCode } >
+                      <Country flag={ `https://www.countryflags.io/${country.countryCode}/flat/64.png` } name={ country.countryName }
+                        continent={ country.continentName } capital={ country.capital }
+                      />
+                    </Grid.Column>);
+                  })
 
-          </Grid.Row>
-        </Grid>
+                }
+              </Grid.Row>
+            </Grid>
+        }
+
       </div>
     );
   }

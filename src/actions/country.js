@@ -6,10 +6,13 @@ export const getContries = () => {
       type: ACTIONS.COUNTRY.GET_COUNTRIES_REQUESTED,
     });
 
-    return setTimeout(() => {
-      dispatch({
-        type: ACTIONS.COUNTRY.GET_COUNTRIES,
-      });
-    }, 3000);
+    fetch('http://api.geonames.org/countryInfoJSON?formatted=true&username=luismb&style=full')
+      .then(
+        response => response.json(),
+        error => console.log(error)
+      )
+      .then(
+        data => dispatch({type: ACTIONS.COUNTRY.GET_COUNTRIES, countries: data.geonames})
+      );
   };
 };
