@@ -16,7 +16,7 @@ function country (state = initialState, action) {
     case ACTIONS.COUNTRY.GET_COUNTRIES:
       return {
         ...state,
-        countries: action.countries,
+        ...action.payload,
         isLoading: false,
       };
     default:
