@@ -27,7 +27,22 @@ export default (props) => (
           props.citiesLoading
             ? <Loader active inline='centered' />
             : (<List as='ul'>
-              {props.cities && props.cities.map((item) => <List.Item key={ item.geonameId } as='li'>{item.name}</List.Item>)}
+              { props.cities
+                ? props.cities.map((item) => <List.Item key={ item.geonameId } as='li'>{item.name}</List.Item>)
+                : <List.Item as='li'>No information found</List.Item>
+              }
+            </List>)
+        }
+      </Grid.Column>
+      <Grid.Column>
+        <Header as='h3'>Holiday List</Header>
+        {
+          props.holidaysLoading
+            ? <Loader active inline='centered' />
+            : (<List as='ul'>
+              {Object.keys(props.holidays).length > 0
+                ? Object.keys(props.holidays).map((item) => <List.Item key={ item } as='li'>{props.holidays[item][0].name}</List.Item>)
+                : (<List.Item as='li'>No information found</List.Item>)}
             </List>)
         }
       </Grid.Column>
