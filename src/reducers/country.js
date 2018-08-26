@@ -2,6 +2,7 @@ import * as ACTIONS from '../constants/country';
 
 const initialState = {
   countries: [ ],
+  filter: '',
   isLoading: true,
 };
 
@@ -18,6 +19,11 @@ function country (state = initialState, action) {
         ...state,
         ...action.payload,
         isLoading: false,
+      };
+    case ACTIONS.COUNTRY.FILTER_COUNTRIES:
+      return {
+        ...state,
+        ...action.payload,
       };
     default:
       return state;
