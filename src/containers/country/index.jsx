@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Header, Divider, Loader } from 'semantic-ui-react';
 import { getContries } from '../../actions/country';
+import { getCities } from '../../actions/city';
 import Summary from '../../components/summary';
 
 class Country extends React.Component {
@@ -26,17 +27,22 @@ class Country extends React.Component {
       this.setState({country: country[0]});
     }
   }
+  componentDidUpdate (prevProps, prevState) {
+    if (this.state.country !== prevState.country) {
+      const { north, south, east, west } = this.state.country;
+      this.props.getCities(north, south, east, west);
+    }
+  }
   render () {
     return (
       <div>
-        <Header as='h2'>{!this.props.isLoading && this.state.country.countryName}</Header>
+        <Header as='h2'>{!this.props.countriesLoading && this.state.country.countryName}</Header>
         <Divider />
         {
-          this.props.isLoading
+          this.props.countriesLoading
             ? <Loader active inline='centered' />
-            : <Summary country={ this.state.country }/>
+            : <Summary country={ this.state.country } citiesLoading={ this.props.citiesLoading } cities={ this.props.cities } />
         }
-
       </div>
     );
   }
@@ -44,11 +50,14 @@ class Country extends React.Component {
 
 const mapStateToProps = state => ({
   countries: state.country.countries,
-  isLoading: state.country.isLoading,
+  countriesLoading: state.country.isLoading,
+  cities: state.city.cities,
+  citiesLoading: state.city.isLoading,
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   getContries,
+  getCities,
 }, dispatch);
 
 export default connect(
