@@ -6,7 +6,7 @@
 This app consumes GeoNames's geographical database  to show information about countries and cities, Countryflag to get flags and HolidayAPI to get holiday information.   
 
 ## Demo ##
-the application is in development, but there is already a demo version: http://warm-spire-22390.herokuapp.com/
+http://warm-spire-22390.herokuapp.com/
 
 ## Technologies ##
 
