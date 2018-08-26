@@ -7,7 +7,7 @@ import Filter from '../../components/filter';
 import { getContries, filterCountries } from '../../actions/country';
 import { getFilterCountries } from '../../selectors';
 
-class MainMenu extends React.Component {
+class Home extends React.Component {
   componentDidMount () {
     !this.props.countries.length && this.props.getContries();
   }
@@ -61,4 +61,4 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(MainMenu);
+)(Home);
