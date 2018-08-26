@@ -16,3 +16,12 @@ export const getContries = () => {
       );
   };
 };
+
+export const filterCountries = (country) => {
+  return dispatch => {
+    dispatch({
+      type: ACTIONS.COUNTRY.FILTER_COUNTRIES,
+      payload: { filter: country },
+    });
+  };
+};

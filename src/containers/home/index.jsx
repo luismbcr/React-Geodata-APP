@@ -3,16 +3,22 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Header, Divider, Grid, Loader } from 'semantic-ui-react';
 import Country from '../../components/country';
-import { getContries } from '../../actions/country';
+import Filter from '../../components/filter';
+import { getContries, filterCountries } from '../../actions/country';
+import { getFilterCountries } from '../../selectors';
 
 class MainMenu extends React.Component {
   componentDidMount () {
     !this.props.countries.length && this.props.getContries();
   }
+  findCountries = (query) => {
+    this.props.filterCountries(query);
+  }
   render () {
     return (
       <div>
         <Header as='h2'>Countries</Header>
+        <Filter findCountries={ this.findCountries } searchValue={ this.props.filter }/>
         <Divider />
         {
           this.props.isLoading
@@ -39,13 +45,17 @@ class MainMenu extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({
-  countries: state.country.countries,
-  isLoading: state.country.isLoading,
-});
+const mapStateToProps = state => {
+  return {
+    countries: getFilterCountries(state),
+    isLoading: state.country.isLoading,
+    filter: state.country.filter,
+  };
+};
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   getContries,
+  filterCountries,
 }, dispatch);
 
 export default connect(
