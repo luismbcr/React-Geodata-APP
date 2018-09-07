@@ -27,7 +27,7 @@ class Home extends React.Component {
               <Grid.Row>
                 {
                   this.props.countries.map((country) => {
-                    return (<Grid.Column key={ country.countryCode } >
+                    return (<Grid.Column mobile={ 16 } tablet={ 8 } computer={ 4 } key={ country.countryCode } >
                       <Country flag={ `https://www.countryflags.io/${country.countryCode}/flat/64.png` }
                         name={ country.countryName } id={ country.countryCode }
                         continent={ country.continentName } capital={ country.capital }
