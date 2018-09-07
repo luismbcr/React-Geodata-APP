@@ -5,5 +5,5 @@ const getCountries = state => state.country.countries;
 
 export const getFilterCountries = createSelector(
   [getCountriesFilter, getCountries],
-  (filter, countries) => countries.filter(item => item.countryName.toLowerCase().indexOf(filter) > -1)
+  (filter, countries) => countries.filter(item => item.countryName.toLowerCase().indexOf(filter.toLowerCase()) > -1)
 );
