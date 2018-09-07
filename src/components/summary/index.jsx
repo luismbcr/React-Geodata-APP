@@ -40,7 +40,7 @@ export default (props) => (
           props.holidaysLoading
             ? <Loader active inline='centered' />
             : (<List as='ul'>
-              {Object.keys(props.holidays).length > 0
+              {Object.keys(props.holidays).length
                 ? Object.keys(props.holidays).map((item) => <List.Item key={ item } as='li'>{props.holidays[item][0].name}</List.Item>)
                 : (<List.Item as='li'>No information found</List.Item>)}
             </List>)
