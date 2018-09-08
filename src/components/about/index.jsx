@@ -1,6 +1,6 @@
 import React from 'react';
 import { Header, Label } from 'semantic-ui-react';
-export default () => (
+const About = () => (
   <div>
     <Header as='h2'>About this project</Header>
     <p>This app consumes GeoNames's geographical database  to show information
@@ -9,3 +9,5 @@ export default () => (
     <Label as='a' target="_blank" href="https://github.com/luismbcr/React-Geodata-APP" content='Github' icon='github' />
   </div>
 );
+
+export default About;

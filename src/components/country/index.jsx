@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Card, Image } from 'semantic-ui-react';
 
-export default (props) => (
+const Country = (props) => (
   <Card.Group as={ Link } to={ `country/${props.id}` } className="country" stackable >
     <Card>
       <Card.Content>
@@ -16,3 +16,5 @@ export default (props) => (
     </Card>
   </Card.Group>
 );
+
+export default Country;

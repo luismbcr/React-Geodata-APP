@@ -31,7 +31,7 @@ class Country extends React.Component {
   componentDidUpdate (prevProps, prevState) {
     if (this.state.country !== prevState.country) {
       const { north, south, east, west, countryCode } = this.state.country;
-      this.props.getCities(north, south, east, west);
+      this.props.getCities(north, south, east, west, countryCode);
       this.props.getHolidays(countryCode);
     }
   }
