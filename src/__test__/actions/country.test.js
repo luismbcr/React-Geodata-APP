@@ -7,12 +7,8 @@ const middlewares = [thunk];
 const mockStore = configureStore(middlewares);
 
 describe('Country Actions', () => {
-  test('should Request countrys', () => {
-    const store = mockStore({
-      countries: [ ],
-      filter: '',
-      isLoading: true,
-    });
+  test('should Request countries', () => {
+    const store = mockStore({countries: []});
 
     const expectedAction = [{
       type: ACTIONS.COUNTRY.GET_COUNTRIES_REQUESTED,
