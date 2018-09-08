@@ -6,7 +6,7 @@ const initialState = {
   isLoading: true,
 };
 
-function country (state = initialState, action) {
+export default (state = initialState, action) => {
   switch (action.type) {
     case ACTIONS.COUNTRY.GET_COUNTRIES_REQUESTED:
       return {
@@ -28,6 +28,4 @@ function country (state = initialState, action) {
     default:
       return state;
   }
-}
-
-export default country;
+};

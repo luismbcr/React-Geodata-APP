@@ -5,7 +5,7 @@ const initialState = {
   isLoading: true,
 };
 
-function holiday (state = initialState, action) {
+export default (state = initialState, action) => {
   switch (action.type) {
     case ACTIONS.HOLIDAY.GET_HOLIDAY_REQUESTED:
       return {
@@ -22,6 +22,4 @@ function holiday (state = initialState, action) {
     default:
       return state;
   }
-}
-
-export default holiday;
+};

@@ -23,6 +23,9 @@
     "semantic-ui-css": "^2.3.1",
     "semantic-ui-react": "^0.80.0"
   },
+  "jest": {
+    "snapshotSerializers": ["enzyme-to-json/serializer"]
+  },
   "scripts": {
     "stylelint": "stylelint '**/*.scss' --config ./.stylelintrc --fix",
     "build-css": "node-sass-chokidar src/ -o src/",
@@ -42,6 +45,7 @@
     "babel-eslint": "^8.2.3",
     "enzyme": "^3.6.0",
     "enzyme-adapter-react-16": "^1.5.0",
+    "enzyme-to-json": "^3.3.4",
     "eslint": "^4.19.1",
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-babel": "^5.1.0",
