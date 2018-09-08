@@ -1,0 +1,169 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render About Component 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Unknown />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <Header
+          as="h2"
+>
+          About this project
+</Header>,
+        <p>
+          This app consumes GeoNames's geographical database  to show information about countries and cities, Countryflag to get flags and HolidayAPI to get holiday information.
+</p>,
+        <Label
+          as="a"
+          content="Github"
+          href="https://github.com/luismbcr/React-Geodata-APP"
+          icon="github"
+          target="_blank"
+/>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "as": "h2",
+          "children": "About this project",
+        },
+        "ref": null,
+        "rendered": "About this project",
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "This app consumes GeoNames's geographical database  to show information about countries and cities, Countryflag to get flags and HolidayAPI to get holiday information.",
+        },
+        "ref": null,
+        "rendered": "This app consumes GeoNames's geographical database  to show information about countries and cities, Countryflag to get flags and HolidayAPI to get holiday information.",
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "as": "a",
+          "content": "Github",
+          "href": "https://github.com/luismbcr/React-Geodata-APP",
+          "icon": "github",
+          "target": "_blank",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <Header
+            as="h2"
+>
+            About this project
+</Header>,
+          <p>
+            This app consumes GeoNames's geographical database  to show information about countries and cities, Countryflag to get flags and HolidayAPI to get holiday information.
+</p>,
+          <Label
+            as="a"
+            content="Github"
+            href="https://github.com/luismbcr/React-Geodata-APP"
+            icon="github"
+            target="_blank"
+/>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "as": "h2",
+            "children": "About this project",
+          },
+          "ref": null,
+          "rendered": "About this project",
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "This app consumes GeoNames's geographical database  to show information about countries and cities, Countryflag to get flags and HolidayAPI to get holiday information.",
+          },
+          "ref": null,
+          "rendered": "This app consumes GeoNames's geographical database  to show information about countries and cities, Countryflag to get flags and HolidayAPI to get holiday information.",
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "as": "a",
+            "content": "Github",
+            "href": "https://github.com/luismbcr/React-Geodata-APP",
+            "icon": "github",
+            "target": "_blank",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    "attachTo": undefined,
+    "hydrateIn": undefined,
+  },
+}
+`;
