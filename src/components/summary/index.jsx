@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid, List, Header, Loader } from 'semantic-ui-react';
 
-export default (props) => (
+const Summary = (props) => (
   <Grid columns={ 3 }>
     <Grid.Row>
       <Grid.Column>
@@ -49,3 +49,5 @@ export default (props) => (
     </Grid.Row>
   </Grid>
 );
+
+export default Summary;
