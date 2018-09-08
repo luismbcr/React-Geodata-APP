@@ -5,7 +5,7 @@ const initialState = {
   isLoading: true,
 };
 
-function city (state = initialState, action) {
+export default (state = initialState, action) => {
   switch (action.type) {
     case ACTIONS.CITY.GET_CITIES_REQUESTED:
       return {
@@ -22,6 +22,4 @@ function city (state = initialState, action) {
     default:
       return state;
   }
-}
-
-export default city;
+};
