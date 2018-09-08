@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Link } from 'react-router-dom';
 import { Container, Menu, Header } from 'semantic-ui-react';
 import Home from './containers/home';
-import About from './containers/about';
+import About from './components/about';
 import Country from './containers/country';
 
 const App = () => (
