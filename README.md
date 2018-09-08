@@ -24,6 +24,8 @@ http://warm-spire-22390.herokuapp.com/
 
 6.  [Create React App](https://github.com/facebook/create-react-app) as project builder.
 
+7. [Jest](https://jestjs.io/) for testing.
+
   ## APIS ##
   1.  [Geonames](http://www.geonames.org/)
   2. [HolidayAPI](https://holidayapi.com/)
