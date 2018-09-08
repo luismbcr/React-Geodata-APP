@@ -10,18 +10,15 @@ describe('Country Actions', () => {
   test('should Request countries', () => {
     const store = mockStore({countries: []});
 
-    const expectedAction = [{
+    const expectedActions = [{
       type: ACTIONS.COUNTRY.GET_COUNTRIES_REQUESTED,
     }, {
-      type: ACTIONS.COUNTRY.GET_COUNTRIES,
-    }];
+      type: ACTIONS.COUNTRY.GET_COUNTRIES, payload: { countries: expect.anything() }}];
 
     return store.dispatch(getContries())
       .then(() => {
         const actions = store.getActions();
-        expectedAction.map((item, i) => {
-          expect(item.type).toEqual(actions[i].type);
-        });
+        expect(actions).toEqual(expectedActions);
       });
   });
 });
