@@ -41,7 +41,7 @@ const Summary = (props) => (
             ? <Loader active inline='centered' />
             : (<List as='ul'>
               {Object.keys(props.holidays).length
-                ? Object.keys(props.holidays).map((item) => <List.Item key={ item } as='li'>{props.holidays[item][0].name}</List.Item>)
+                ? Object.keys(props.holidays).map((item) => <List.Item key={ item } as='li'>{props.holidays[item].name}</List.Item>)
                 : (<List.Item as='li'>No information found</List.Item>)}
             </List>)
         }
