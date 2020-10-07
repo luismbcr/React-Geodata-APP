@@ -14,7 +14,8 @@ export const getCities = (north, south, east, west, countryCode) => {
       )
       .then(
         data => {
-          const cities = data.geonames.filter((city) => {
+          
+          const cities = (data.geonames != undefined) && data.geonames.filter((city) => {
             return (city.countrycode === countryCode) && city;
           });
           dispatch({type: ACTIONS.CITY.GET_CITIES, payload: { cities: cities }});

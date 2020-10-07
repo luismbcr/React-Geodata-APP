@@ -17,7 +17,6 @@ export const getHolidays = (country) => {
       .then(
         data => {
           if (data !== undefined) {
-            console.log('in')
             dispatch({type: ACTIONS.HOLIDAY.GET_HOLIDAY, payload: { holidays: data.holidays }});
           } else {
             dispatch({type: ACTIONS.HOLIDAY.GET_HOLIDAY, payload: { holidays: { } }});
